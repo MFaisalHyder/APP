@@ -37,15 +37,15 @@ I have tried my best to use the latest(stable) available libraries!
 - OpenApi (3.0.0)
 
 ## Steps for running application
-####Terminal
+#### Terminal
    - go to **directory/app**
    - execute "**./gradlew clean build**" to generate .jar file
    - execute "**java -jar build/libs/app-1.0.jar**" to run the application
 
-####JUnits
+#### JUnits
    - execute "**./gradlew test**"
 
-####Docker
+#### Docker
 - To create Docker Image
    - execute **./gradlew bootBuildImage**
 
