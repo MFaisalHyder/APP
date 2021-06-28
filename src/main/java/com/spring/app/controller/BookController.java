@@ -23,6 +23,8 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @RestController
 @RequiredArgsConstructor
@@ -80,4 +82,8 @@ public class BookController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/getWithRequestBody")
+    public ResponseEntity<List<String>> getAllUsers(@RequestBody BookDTO bookDTO) {
+        return new ResponseEntity<>(Stream.of("Faisal", "Hyder", bookDTO.getName()).collect(Collectors.toList()), HttpStatus.OK);
+    }
 }
